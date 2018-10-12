@@ -6,7 +6,15 @@ const router = express.Router();
 const Destinations = require('../models/destinations')
 
 router.get('/', (req,res) => {
-  res.send('Its all working now, time to go home')
+  Destinations.find({}, (err, allDestinations) => {
+    if(err) {
+      console.log(err)
+    } else {
+      res.render('index.ejs', {
+        destination:  Destinations
+      })
+    }
+  })
 })
 
 router.post('/', (req,res) => {

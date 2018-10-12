@@ -1,3 +1,4 @@
+
 const express = require('express');
 const app = express();
 
@@ -6,8 +7,10 @@ const methodOverride = require('method-override')
 
 require('./db/db');
 
-const destinationsController = require('./controllers/dc')
+const destinationsController = require('./controllers/dC')
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(methodOverride('_method'));
 app.use('/destinations', destinationsController);
 
 // app.get('/', (req,res) => {
