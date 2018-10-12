@@ -1,17 +1,18 @@
 const express = require('express');
-const app     = express();
+const app = express();
+const methodOVerride = require('method-override');
 const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
 
-require('./db/db')
+require('./db/db');
 
-app.get('/', (req, res) => {
-  console.log('its alive');
-  res.send('its alive');
-})
+const destinationsController = require('./controllers/dc');
+
+// app.use(bodyParser.urlencoded({extended: false}));
+// app.use(methodOVerride('_method'));
+app.use('/destinations', destinationsController);
 
 
 
 app.listen(3000, () => {
-  console.log('listening on port 3000')
-})
+  console.log('Server is listening on port 3000');
+});

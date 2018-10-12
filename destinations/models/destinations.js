@@ -1,13 +1,10 @@
 const mongoose = require('mongoose');
 
-
-
-const destinationsSchema = new mongoose.destinations ({
+const destinationsSchema = new mongoose.Schema({
   name: {type: String, required: true},
-  fly: boolean,
-  climate: String,
-  image: String
-})
+  fly: {type: Boolean},
+  climate: {type: String},
+  image: {type: String}
+});
 
-
-module.exports = mongoose.model('Destinations', destinationSchema),
+module.exports = mongoose.model('Destinations', destinationsSchema);

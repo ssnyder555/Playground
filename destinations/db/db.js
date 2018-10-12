@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb://localhost/fruit';
+const connectionString = "mongodb://localhost/destinations"
 
- mongoose .connect(connectionString);
+mongoose.connect(connectionString);
 
- mongoose.connection.on('connected', () => {
-   console.log('Mongoose connected to ${connectionString}')
+mongoose.connection.on('connected', () => {
+   console.log(`Mongoose connected to ${connectionString}`)
  });
 
  mongoose.connection.on('disconnected', () => {
@@ -15,5 +15,3 @@ const connectionString = 'mongodb://localhost/fruit';
  mongoose.connection.on('error', (err) => {
    console.log('Mongoose errors:', err);
  })
-
- 
