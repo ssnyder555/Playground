@@ -1,1 +1,49 @@
-background-color: blue; 
+html {
+
+}
+body {
+  background-image: url(https://wallpaper-house.com/data/out/9/wallpaper2you_363998.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+text-align: center;
+position: fixed;
+}
+
+.grim {
+  justify-content: center;
+  margin-left: 150px;
+}
+
+.body, h1 {
+  font-family: 'Shadows Into Light', cursive;
+  color: maroon;
+  font-size: 60px;
+  float: right;
+  text-shadow: 2px 2px grey;
+}
+
+#error {
+  font-size: 100px;
+  float: left;
+  margin: 20px 50px 30px 100px;
+}
+@media (min-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+
+	.deck {
+		width: 660px;
+		height: 680px;
+	}
+
+	.deck .card {
+		height: 125px;
+		width: 125px;
+	}
+
+	.popup {
+		width: 60%;
+	}
+}
